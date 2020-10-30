@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.example.zomatosearch.viewmodel.SearchViewModel" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            app:title="Search"
+            app:subtitle="Search your favorate restaurent"/>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+  android:layout_margin="25dp"
+    android:orientation="horizontal">
+    <EditText
+        android:text="@={viewmodel.searchQuery}"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:hint="Start typing your query..."
+        android:id="@+id/search_query"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+         android:background="@drawable/searchdesign"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.75"
+        />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+       android:onClick="@{viewmodel.searchRestaurent}"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.15"
+        android:src="@drawable/searchicon"
+        app:backgroundTint="#f1f1f1"
+        app:fabSize="mini"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_gravity="center_vertical"
+        />
+
+</LinearLayout>
+<androidx.recyclerview.widget.RecyclerView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/hotels"/>
+
+    </LinearLayout>
+
+</layout>
